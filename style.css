@@ -2,6 +2,8 @@
     height: 12vh;
     background-color: #0c303f;
     display: flex;
+    align-items: center;
+
 }
 
 * {
@@ -11,6 +13,11 @@ body {
     margin:0
 }
 
+.heading{
+    color: wheat;
+    margin-left:100px;
+    font-size: 30px;
+}
 .ticket-container {
     min-height: 88vh;
     background-color: #f2f2f2;
@@ -30,7 +37,7 @@ body {
     height:8vh;
     background-color: #2b3d47;
     border-radius: 3px;
-    margin-top: 2vh;
+    /* margin-top: 2vh; */
     margin-left: 8vw;
 }
 .filter-container{
@@ -53,8 +60,13 @@ body {
     margin-left: calc(4.5vw*0.3);
 }
 .add,.delete{
-    height: 100%;
-    width: 50%;
+    transition: all 0.5s ease;
+    
+}
+.material-icons-outlined{
+    background-color: #2B3D47;
+    color: white;
+    width: 100%;
 }
 
 .pink-color-btn ,.modal-pink-filter,.ticket-color-pink{
@@ -75,18 +87,22 @@ body {
 .filter:hover {
     background-color: black;
     cursor: pointer;
+    transition: all 0.5s ease;
 }
 .add:hover{
     background-color: black;
     cursor: pointer;
+    transition: all 0.5s ease;
 }
 .delete:hover{
     background-color: black;
     cursor: pointer;
+    transition: all 0.5s ease;
 }
 .add,.delete{
     height: 100%;
     width: 50%;
+    transition: all 0.5s ease;
 }
 .action-btn{
     background-color:white;
@@ -99,7 +115,7 @@ body {
     border-radius: 3px;
     margin-top: calc(8vh*0.3);
     margin-left: calc(4.5vw*0.33);
-    padding-right: 11px;
+    /* padding-right: px; */
     
 }
 
