@@ -5,6 +5,15 @@ let removee = document.querySelector(".delete");
 removee.addEventListener
 let priorityColor;
 let deleteBtn = document.querySelector(".delete");
+function generateUID() {
+    // I generate the UID from two parts here 
+    // to ensure the random number provide enough bits.
+    var firstPart = (Math.random() * 46656) | 0;
+    var secondPart = (Math.random() * 46656) | 0;
+    firstPart = ("000" + firstPart.toString(36)).slice(-3);
+    secondPart = ("000" + secondPart.toString(36)).slice(-3);
+    return firstPart + secondPart;
+}
 deleteBtn.addEventListener("click",function(e){
     let selectedTickets = document.querySelectorAll(".ticket.active");
     let allTasks = JSON.parse(localStorage.getItem("allTasks"));
@@ -159,7 +168,8 @@ function selectFilter(task,e){
 function addTicket(task,e){
     if(e.key=="Enter" && e.shiftKey == false && task.innerText.trim()!=""){
         let taskContent = task.innerText;
-        let id = uid();
+        let id = generateUID()
+        console.log("id:",id)
         let ticket = document.createElement("div");
         ticket.classList.add("ticket");
         ticket.innerHTML = `
@@ -186,7 +196,7 @@ function addTicket(task,e){
     //     }
     // })
     let allTasks = localStorage.getItem("allTasks");
-    ;
+    
     if(allTasks==null){
         let data= [{"tickedtId":id,"task":taskContent,"priority":priorityColor}];
         localStorage.setItem("allTasks",JSON.stringify(data));
@@ -214,5 +224,12 @@ function addTicket(task,e){
     }
     
 }
+
+   
+
+
+
+
+
 
    
